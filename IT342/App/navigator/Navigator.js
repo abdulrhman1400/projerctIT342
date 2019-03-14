@@ -9,7 +9,8 @@ import Gender from'../screens/Gender';
 const AppNavigator = createStackNavigator({
     Home: { screen: Home },
     Gym: { screen: Gym },
-    Gender: {screen: Gender}
+    Gender: {screen: Gender},
+    
     
     
 

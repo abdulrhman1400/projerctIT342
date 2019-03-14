@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Picker, Button} from 'react-native';
-export default class Gender extends React.Component{
+ class Gender extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-          sex:''
+          sex: ''
           
             
         };
@@ -33,6 +33,6 @@ export default class Gender extends React.Component{
 }
  
   
-
+export default Gender ;
   
   
