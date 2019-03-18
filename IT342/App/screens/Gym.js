@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 
+import User from '../User';
+
 export default class App extends React.Component {
     static navigationOptions = {
-        title: 'Gym',
+        title: 'Activities',
 
     };
-    
     
 
   render() {
@@ -24,10 +25,11 @@ export default class App extends React.Component {
         />
 
         </TouchableOpacity>
-       
+
+
        <TouchableOpacity style={styles.button} >
 
-      
+ 
        <Image
         style={{width: 100, height: 100}}
           source={require('./Assets/calories.png')}
@@ -37,9 +39,10 @@ export default class App extends React.Component {
 
 </View>
 
-
-       <View style={styles.con1}>
-      <TouchableOpacity
+       <View style={styles.top}>
+       <View style={styles.con1}
+        >
+      <TouchableOpacity 
       style={styles.button}
 >
 <Image
@@ -49,13 +52,15 @@ export default class App extends React.Component {
        </TouchableOpacity> 
        
        
-       
        </View>
+       </View>
+       
+       
  
        
       </View>
     );
-  
+    console.log('####################');
   }}
 
 
@@ -101,6 +106,10 @@ con1:{
 
 con2:{
     flexDirection: 'column'
+},
+
+top:{
+  marginTop: -80,
 },
 }
 );

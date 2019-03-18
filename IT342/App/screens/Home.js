@@ -1,24 +1,26 @@
-
-
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Picker, TextInput} from 'react-native';
 
+import User from '../User';
+console.log('####################');
+
 
 export default class Gym extends React.Component {
+  state = {
+    height : '56',
+    width : '',
+    age : '',
+  };
+  User = (age, weight, height) => {};
     static navigationOptions = {
         title: 'Home',
 
     };
-    
     navigateToGym = () => {
       this.props.navigation.navigate('Gym')
     };
-    navigateToGender = () => {
-      this.props.navigation.navigate('Gender')
-    };
     
     
-
   render() {
     return (
       
@@ -28,13 +30,21 @@ export default class Gym extends React.Component {
     <View style={styles.con1}>
 <View style={styles.space}>
     <Text style={styles.text}>Length</Text>
-   < TextInput placeholder={"Enter your Length"} style={styles.textinput}></ TextInput>
+   <TextInput 
+   placeholder={"Enter your Length"}
+   style={styles.textinput}
+   onChangeText={(height) => this.setState({ height: height })}
+   ></ TextInput>
    </View>
    
   
    <View style={styles.space}>
    <Text style={styles.text}>Weight</Text>
-   < TextInput placeholder={"Enter your Weight"} style={styles.textinput}></ TextInput>
+   <TextInput 
+   placeholder={"Enter your Weight"} 
+   style={styles.textinput}
+   onChangeText={(weight) => this.setState({ weight: weight })}
+   ></ TextInput>
    </View>
    
 </View>
@@ -46,24 +56,13 @@ export default class Gym extends React.Component {
     <Text style={styles.text}>Age</Text>
     
    
-   < TextInput placeholder={"Enter your Age"} style={styles.textinput1}></ TextInput>
+   <TextInput 
+   placeholder={"Enter your Age"} 
+   style={styles.textinput1}
+   onChangeText={(age) => this.setState({ age: age })}
+   ></ TextInput>
   
-  <View style={styles.button1}>
-<TouchableOpacity onPress = {
-            this.navigateToGender
-          }>
-            <View style={styles.findView}>
-            
-                <Text style={styles.findView}> Gender</Text>
-
-      
-           </View>
-
-           
-</TouchableOpacity>
-
   
-  </View>
    
 
    
@@ -72,10 +71,10 @@ export default class Gym extends React.Component {
 </View>
 </View>
 
-<TouchableOpacity
+<TouchableOpacity onPress = {this.navigateToGym}
    style={styles.button}>
-       <Text style={styles.bold} onPress = {this.navigateToGym}
-     >Sub</Text>
+       <Text style={styles.bold} 
+     >Enter</Text>
    </TouchableOpacity>
 
    
