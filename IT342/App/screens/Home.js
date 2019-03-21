@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Picker, TextInput} from 'react-native';
 
-import User from '../User';
-console.log('####################');
+
+import firebase from '../../Firebase';
 
 
 export default class Gym extends React.Component {
   state = {
-    height : '56',
-    width : '',
+    height : '',
+    weight : '',
     age : '',
   };
   User = (age, weight, height) => {};
@@ -17,7 +17,13 @@ export default class Gym extends React.Component {
 
     };
     navigateToGym = () => {
-      this.props.navigation.navigate('Gym')
+      firebase.database().ref('user').set({
+        height: this.state.height,
+        weight: this.state.weight,
+        age: this.state.age
+      }).then(() => {
+        this.props.navigation.navigate('Gym')
+      });
     };
     
     

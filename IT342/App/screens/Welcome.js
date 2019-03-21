@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Button, TextInput} from 'react-native';
 
 
+import firebase from '../../Firebase';
+console.log(firebase);
+
 export default class Welcome extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
