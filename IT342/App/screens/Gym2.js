@@ -1,68 +1,61 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 
-import User from '../User';
+
 
 export default class App extends React.Component {
     static navigationOptions = {
-        title: 'Activities',
+        title: 'Gym',
 
     };
     
-    navigateToGym2 = () => {
-      this.props.navigation.navigate('Gym2')
-    };
-
 
   render() {
     return (
 
       <View style={styles.container}>
-
-     <View style={styles.con1}>
-      <TouchableOpacity onPress = {this.navigateToGym2}
+      <View style={styles.size}>
+     <View
       style={styles.button} >
         
         <Image
         style={{width: 100, height: 100}}
-          source={require('./Assets/exercise.png')}
+          source={require('./Assets/gym.png')}
         />
-
-        </TouchableOpacity>
-
-
-       <TouchableOpacity style={styles.button} >
+</View>
+        
+</View>
+<View style={styles.size}>
+       <View style={styles.button} >
 
  
        <Image
         style={{width: 100, height: 100}}
-          source={require('./Assets/calories.png')}
+          source={require('./Assets/gym2.png')}
         />
-
-        </TouchableOpacity>
-
 </View>
+        </View>
 
-       <View style={styles.top}>
-       <View style={styles.con1}
-        >
-      <TouchableOpacity 
+
+
+        <View style={styles.size}>
+      <View
       style={styles.button}
 >
 <Image
         style={{width: 100, height: 100}}
-          source={require('./Assets/settings-gears.png')}
+          source={require('./Assets/gym3.png')}
         />
-       </TouchableOpacity> 
        
        
+       </View>
        </View>
        </View>
        
        
  
        
-      </View>
+     
     );
     console.log('####################');
   }}
@@ -85,11 +78,11 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     backgroundColor: '#67BEFD',
-    padding: 30,
-    marginHorizontal: 10,
+    padding: 5,
+    marginHorizontal: 0,
     //paddingVertical: 45,
     //justifyContent: 'center',
-    //marginVertical: 10,
+    marginVertical:-170,
     borderWidth:1,
     borderRadius:12,
     marginTop: 100,
@@ -114,6 +107,9 @@ con2:{
 
 top:{
   marginTop: -80,
+},
+size: {
+  padding: 50,
 },
 }
 );
