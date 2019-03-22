@@ -5,16 +5,15 @@ import { StyleSheet, Text, View, TouchableOpacity, Picker, TextInput} from 'reac
 import firebase from '../../Firebase';
 
 
-export default class Gym extends React.Component {
+export default class App extends React.Component {
   state = {
     height : '',
     weight : '',
     age : '',
-    PMI: '',
   };
   User = (age, weight, height) => {};
     static navigationOptions = {
-        title: 'Information',
+        title: 'Update',
 
     };
     navigateToGym = () => {
@@ -23,7 +22,6 @@ export default class Gym extends React.Component {
         weight: this.state.weight,
         age: this.state.age
       }).then(() => {
-        PMI = weight / (height*height);
         this.props.navigation.navigate('Gym')
       });
     };

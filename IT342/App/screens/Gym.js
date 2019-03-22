@@ -10,9 +10,17 @@ export default class App extends React.Component {
     };
     
     navigateToGym2 = () => {
+      // if(PMI < 18.5){
+
+      // };
       this.props.navigation.navigate('Gym2')
     };
-
+    navigateToCalories = () => {
+      this.props.navigation.navigate('Calories')
+    };
+    navigateToSettings = () => {
+      this.props.navigation.navigate('Settings')
+    };
 
   render() {
     return (
@@ -31,7 +39,8 @@ export default class App extends React.Component {
         </TouchableOpacity>
 
 
-       <TouchableOpacity style={styles.button} >
+       <TouchableOpacity onPress = {this.navigateToCalories}
+       style={styles.button} >
 
  
        <Image
@@ -46,7 +55,7 @@ export default class App extends React.Component {
        <View style={styles.top}>
        <View style={styles.con1}
         >
-      <TouchableOpacity 
+      <TouchableOpacity onPress = {this.navigateToSettings}
       style={styles.button}
 >
 <Image
@@ -59,8 +68,6 @@ export default class App extends React.Component {
        </View>
        </View>
        
-       
- 
        
       </View>
     );
@@ -94,11 +101,6 @@ const styles = StyleSheet.create({
     borderRadius:12,
     marginTop: 100,
     left: 1
-
-    
-   
-   
-    
     
 },
 
@@ -115,5 +117,8 @@ con2:{
 top:{
   marginTop: -80,
 },
+con3:{
+  marginVertical:150,
+}
 }
 );
