@@ -13,7 +13,7 @@ export default class App extends React.Component {
   };
   User = (age, weight, height) => {};
     static navigationOptions = {
-        title: 'Update',
+        title: 'Settings',
 
     };
     navigateToGym = () => {

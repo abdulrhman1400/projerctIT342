@@ -1,12 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image,Button } from 'react-native';
 
 import User from '../User';
 
 export default class App extends React.Component {
     static navigationOptions = {
         title: 'Activities',
-
+        headerRight: (
+          <Button
+            onPress={() => alert('HIII')}
+            title="--"
+            color="#000"
+          />
+        )
     };
     
     navigateToGym2 = () => {

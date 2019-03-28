@@ -23,7 +23,7 @@ export default class Gym extends React.Component {
         weight: this.state.weight,
         age: this.state.age
       }).then(() => {
-        PMI = weight / (height*height);
+        //PMI = weight / (height*height);
         this.props.navigation.navigate('Gym')
       });
     };
@@ -44,6 +44,7 @@ export default class Gym extends React.Component {
         <TextInput 
            placeholder={"Enter your height"}
            style={styles.textinput}
+           onChangeText={(height)=> this.setState({height: height})}
          >
         </TextInput>
          </View>
@@ -57,6 +58,7 @@ export default class Gym extends React.Component {
         <TextInput 
            placeholder={"Enter your Weight"}
            style={styles.textinput}
+           onChangeText={(weight)=> this.setState({weight: weight})}
          >
         </TextInput>
          </View>
@@ -71,6 +73,7 @@ export default class Gym extends React.Component {
         <TextInput 
            placeholder={"Enter your Age"}
            style={styles.textinput}
+           onChangeText={(age)=> this.setState({age: age})}
          >
         </TextInput>
          </View>

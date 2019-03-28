@@ -7,8 +7,17 @@ export default class App extends React.Component {
     static navigationOptions = {
         title: 'Gym',
 
+
     };
-    
+        navigateToAct1 = () => {
+      this.props.navigation.navigate('Act1')
+    };
+    navigateToAct2 = () => {
+      this.props.navigation.navigate('Act2')
+    };
+    navigateToAct3 = () => {
+      this.props.navigation.navigate('Act3')
+    };
 
   render() {
     return (
@@ -19,83 +28,43 @@ export default class App extends React.Component {
         <View style={styles.top}>
 
        <View style={styles.size}>
-         <View style={styles.button}>
-             <Image
-               style={{width: 100, height: 100}}
-               source={require('./Assets/gym.png')}
-             />
-        </View>
-        </View>
-       <View style={styles.text}>
-         <Text>Hi my freind Hi my freind Hi my freind </Text>
-       </View>
-
-
-
-       <View style={styles.size}>
-        <View style={styles.button}>
+       <TouchableOpacity onPress = {this.navigateToAct1}
+        style={styles.button}>
              <Image
                style={{width: 100, height: 100}}
                source={require('./Assets/stretching-exercises.png')}
              />
-       </View>
-       </View>
-       <View style={styles.text}>
-         <Text>Hi my freind Hi my freind Hi my freind Hi my freind</Text>
+       </TouchableOpacity>
        </View>
 
 
-       <View style={styles.size}>
-        <View style={styles.button}>
-             <Image
-               style={{width: 100, height: 100}}
-               source={require('./Assets/gym2.png')}
-             />
-       </View>
-       </View>
-           <View style={styles.text}>
-              <Text>Hi my freind Hi my freind Hi my freind Hi my freind </Text>
-           </View>
 
-           <View style={styles.size}>
-        <View style={styles.button}>
-             <Image
-               style={{width: 100, height: 100}}
-               source={require('./Assets/gym2.png')}
-             />
-       </View>
-       </View>
-           <View style={styles.text}>
-              <Text>Hi my freind Hi my freind Hi my freind Hi my freind </Text>
-           </View>
-
-
+         
+        
 
        <View style={styles.size}>
-        <View style={styles.button}>
+       <TouchableOpacity onPress = {this.navigateToAct2}
+        style={styles.button}>
              <Image
                style={{width: 100, height: 100}}
                source={require('./Assets/gym3.png')}
              />
+       </TouchableOpacity>
        </View>
-       </View>
-       <View style={styles.text}>
-         <Text> Hi my freind</Text>
-       </View>
+
 
 
 
        <View style={styles.size}>
-        <View style={styles.button} >
+       <TouchableOpacity onPress = {this.navigateToAct3}
+        style={styles.button} >
              <Image
                style={{width: 100, height: 100}}
                source={require('./Assets/gym4.png')}
              />
+       </TouchableOpacity>
        </View>
-       </View>
-       <View style={styles.text}>
-         <Text> Hi my freind</Text>
-       </View>
+
 
        </View>
 
@@ -128,7 +97,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     backgroundColor: '#67BEFD',
-    padding: 5,
+    padding: 35,
     marginHorizontal: 10,
     //paddingVertical: 45,
     //justifyContent: 'center',
