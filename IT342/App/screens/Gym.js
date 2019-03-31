@@ -6,13 +6,7 @@ import User from '../User';
 export default class App extends React.Component {
     static navigationOptions = {
         title: 'Activities',
-        headerRight: (
-          <Button
-            onPress={() => alert('HIII')}
-            title="--"
-            color="#000"
-          />
-        ),
+        
         headerLeft: (
           <View></View>
         )
