@@ -5,19 +5,31 @@ import { StyleSheet, Text, View, TouchableOpacity, Picker, TextInput} from 'reac
 import firebase from '../../Firebase';
 
 
-export default class Gym extends React.Component {
+export default class App extends React.Component {
+  
   state = {
     height : '',
     weight : '',
     age : '',
-    BMI: '',
+    BMI : ''
   };
   User = (age, weight, height) => {};
     static navigationOptions = {
-        title: 'Information',
-        headerLeft: (
-          <View></View>
-        )
+        title: 'Settings',
+
+    };
+    getValue = () => {
+      firebase.database().ref('location/hospital/').once('value')
+      .then((snapshot) => {
+        
+        this.setState({
+          height: DataTransferItem.height,
+          weight: DataTransferItem.weight,
+          age: DataTransferItem.age
+        })
+       })
+       .catch(error => console.log('#####################', error))
+
     };
     navigateToGym = () => {
       firebase.database().ref('user').set({
@@ -25,7 +37,6 @@ export default class Gym extends React.Component {
         weight: this.state.weight,
         age: this.state.age
       }).then(() => {
-        //PMI = weight / (height*height);
         this.setState(
           {BMI: ( this.state.weight / (((this.state.height)/100)^2) ) }
           )
@@ -65,7 +76,7 @@ export default class Gym extends React.Component {
          <Text style={styles.text1}> Weight
           </Text>
         <TextInput 
-           placeholder={"Enter your Weight"}
+           placeholder={"Enter your weight"}
            style={styles.textinput}
            onChangeText={(weight)=> this.setState({weight: weight})}
          >
@@ -80,7 +91,7 @@ export default class Gym extends React.Component {
          <Text style={styles.text1}> Age
           </Text>
         <TextInput 
-           placeholder={"Enter your Age"}
+           placeholder={"Enter your age"}
            style={styles.textinput}
            onChangeText={(age)=> this.setState({age: age})}
          >
@@ -93,7 +104,6 @@ export default class Gym extends React.Component {
            <Text style={styles.bold} 
          >Enter</Text>
        </TouchableOpacity>
-    
 
        </View> 
     

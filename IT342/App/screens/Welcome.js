@@ -23,7 +23,7 @@ export default class Welcome extends React.Component {
       
         <View style={styles.container}>
 
-        <Text style={styles.text}>Welcome  <Text style={styles.text1}>to this application that will help you find out the activities that are right for you and the number of calories in some foods. </Text>
+        <Text style={styles.text}>Welcome  <Text style={styles.text1}>to this application which will help you find out the activities that will help you and the number of calories in some food. </Text>
 </Text>
 <TouchableOpacity onPress = {this.navigateToHome}>
        <Text style={styles.text2}> Get Start</Text>

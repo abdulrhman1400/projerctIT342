@@ -1,18 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image,Button } from 'react-native';
 
 import User from '../User';
 
 export default class App extends React.Component {
     static navigationOptions = {
         title: 'Activities',
-
+        
+        headerLeft: (
+          <View></View>
+        )
     };
     
     navigateToGym2 = () => {
+      // if(PMI < 18.5){
+
+      // };
       this.props.navigation.navigate('Gym2')
     };
-
+    navigateToCalories = () => {
+      this.props.navigation.navigate('Calories')
+    };
+    navigateToSettings = () => {
+      this.props.navigation.navigate('Settings')
+    };
 
   render() {
     return (
@@ -31,7 +42,8 @@ export default class App extends React.Component {
         </TouchableOpacity>
 
 
-       <TouchableOpacity style={styles.button} >
+       <TouchableOpacity onPress = {this.navigateToCalories}
+       style={styles.button} >
 
  
        <Image
@@ -43,25 +55,36 @@ export default class App extends React.Component {
 
 </View>
 
-       <View style={styles.top}>
-       <View style={styles.con1}
-        >
-      <TouchableOpacity 
-      style={styles.button}
->
-<Image
+
+<View style={styles.con1}>
+<View style={styles.top}>
+      <TouchableOpacity onPress = {this.navigateToGym2}
+      style={styles.button} >
+        
+        <Image
+        style={{width: 100, height: 100}}
+          source={require('./Assets/body-mass-index.png')}
+        />
+
+        </TouchableOpacity>
+        </View>
+
+        <View style={styles.con1}>
+<View style={styles.top}>
+       <TouchableOpacity onPress = {this.navigateToSettings}
+       style={styles.button} >
+
+ 
+       <Image
         style={{width: 100, height: 100}}
           source={require('./Assets/settings-gears.png')}
         />
-       </TouchableOpacity> 
-       
-       
+
+        </TouchableOpacity>
+        </View>
+</View>
        </View>
-       </View>
-       
-       
- 
-       
+
       </View>
     );
     console.log('####################');
@@ -94,11 +117,6 @@ const styles = StyleSheet.create({
     borderRadius:12,
     marginTop: 100,
     left: 1
-
-    
-   
-   
-    
     
 },
 
@@ -115,5 +133,8 @@ con2:{
 top:{
   marginTop: -80,
 },
+con3:{
+  marginVertical:150,
+}
 }
 );
