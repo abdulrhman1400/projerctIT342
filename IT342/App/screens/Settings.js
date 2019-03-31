@@ -22,6 +22,13 @@ export default class App extends React.Component {
         weight: this.state.weight,
         age: this.state.age
       }).then(() => {
+        this.setState(
+          {BMI: ( this.state.weight / (((this.state.height)/100)^2) ) }
+          )
+        if((this.state.BMI) > 18.5 && (this.state.BMI) < 25){alert('Your BMI is ' + this.state.BMI + ' normal weight');};
+        if((this.state.BMI) < 18.5){alert('BMI ' + this.state.BMI + ' underweight');};
+        if((this.state.BMI) < 30.1 && (this.state.BMI) > 25){alert('Your BMI is ' + this.state.BMI + ' overweight');};
+        if((this.state.BMI) > 30){alert('Your BMI is ' + this.state.BMI + ' you are fat');};
         this.props.navigation.navigate('Gym')
       });
     };

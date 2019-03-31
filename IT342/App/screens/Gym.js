@@ -12,6 +12,9 @@ export default class App extends React.Component {
             title="--"
             color="#000"
           />
+        ),
+        headerLeft: (
+          <View></View>
         )
     };
     
@@ -58,23 +61,36 @@ export default class App extends React.Component {
 
 </View>
 
-       <View style={styles.top}>
-       <View style={styles.con1}
-        >
-      <TouchableOpacity onPress = {this.navigateToSettings}
-      style={styles.button}
->
-<Image
+
+<View style={styles.con1}>
+<View style={styles.top}>
+      <TouchableOpacity onPress = {this.navigateToGym2}
+      style={styles.button} >
+        
+        <Image
+        style={{width: 100, height: 100}}
+          source={require('./Assets/body-mass-index.png')}
+        />
+
+        </TouchableOpacity>
+        </View>
+
+        <View style={styles.con1}>
+<View style={styles.top}>
+       <TouchableOpacity onPress = {this.navigateToCalories}
+       style={styles.button} >
+
+ 
+       <Image
         style={{width: 100, height: 100}}
           source={require('./Assets/settings-gears.png')}
         />
-       </TouchableOpacity> 
-       
-       
+
+        </TouchableOpacity>
+        </View>
+</View>
        </View>
-       </View>
-       
-       
+
       </View>
     );
     console.log('####################');
