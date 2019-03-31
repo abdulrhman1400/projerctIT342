@@ -88,7 +88,9 @@ export default class App extends React.Component {
         </View>
 </View>
        </View>
-
+      <View>
+        <Text style={styles.text}>Start with simple goals then progress to longer range goals</Text>
+      </View>
       </View>
     );
     console.log('####################');
@@ -106,8 +108,22 @@ const styles = StyleSheet.create({
   },
   text: {
     alignItems: 'center',
-    
-  },
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    fontSize: 35,
+    color:'#000',
+    margin: '10%',
+     fontWeight: 'bold',
+    },
+    text1: {
+      //alignItems: 'center',
+      alignItems: 'stretch',
+      //justifyContent: 'center',
+      fontSize: 25,
+      color:'#ffff',
+       fontWeight: 'bold',
+      },
+
 
   button: {
     alignItems: 'center',
