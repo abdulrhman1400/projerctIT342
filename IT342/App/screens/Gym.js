@@ -77,7 +77,7 @@ export default class App extends React.Component {
 
         <View style={styles.con1}>
 <View style={styles.top}>
-       <TouchableOpacity onPress = {this.navigateToCalories}
+       <TouchableOpacity onPress = {this.navigateToSettings}
        style={styles.button} >
 
  

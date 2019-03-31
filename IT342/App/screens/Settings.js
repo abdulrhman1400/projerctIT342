@@ -17,6 +17,18 @@ export default class App extends React.Component {
         title: 'Settings',
 
     };
+    getValue = () => {
+      firebase.database().ref('location/hospital/').once('value')
+      .then((snapshot) => {
+        
+        this.setState({
+          height: DataTransferItem.height,
+          weight: DataTransferItem.weight,
+          age: DataTransferItem.age
+        })
+       })
+       .catch(error => console.log('#####################', error))
+    };
     navigateToGym = () => {
       firebase.database().ref('user').set({
         height: this.state.height,
@@ -26,10 +38,10 @@ export default class App extends React.Component {
         this.setState(
           {BMI: ( this.state.weight / (((this.state.height)/100)^2) ) }
           )
-        if((this.state.BMI) > 18.5 && (this.state.BMI) < 25){alert('Your BMI is ' + this.state.BMI + ' normal weight');};
-        if((this.state.BMI) < 18.5){alert('BMI ' + this.state.BMI + ' underweight');};
-        if((this.state.BMI) < 30.1 && (this.state.BMI) > 25){alert('Your BMI is ' + this.state.BMI + ' overweight');};
-        if((this.state.BMI) > 30){alert('Your BMI is ' + this.state.BMI + ' you are fat');};
+          if((this.state.BMI) > 18.4 && (this.state.BMI) < 25.1){alert('Your BMI is ' + this.state.BMI + ' normal weight');};
+          if((this.state.BMI) < 18.5){alert('BMI ' + this.state.BMI + ' underweight');};
+          if((this.state.BMI) < 29.9 && (this.state.BMI) > 25){alert('Your BMI is ' + this.state.BMI + ' overweight');};
+          if((this.state.BMI) > 30){alert('Your BMI is ' + this.state.BMI + ' you are fat');};
         this.props.navigation.navigate('Gym')
       });
     };
@@ -48,7 +60,7 @@ export default class App extends React.Component {
          <Text style={styles.text1}> Height
           </Text>
         <TextInput 
-           placeholder={"Enter your height"}
+           placeholder={this.state.height}
            style={styles.textinput}
          >
         </TextInput>
@@ -61,7 +73,7 @@ export default class App extends React.Component {
          <Text style={styles.text1}> Weight
           </Text>
         <TextInput 
-           placeholder={"Enter your Weight"}
+           placeholder={this.state.weight}
            style={styles.textinput}
          >
         </TextInput>
@@ -75,7 +87,7 @@ export default class App extends React.Component {
          <Text style={styles.text1}> Age
           </Text>
         <TextInput 
-           placeholder={"Enter your Age"}
+           placeholder={this.state.age}
            style={styles.textinput}
          >
         </TextInput>
