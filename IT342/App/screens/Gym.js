@@ -25,6 +25,10 @@ export default class App extends React.Component {
       this.props.navigation.navigate('Settings')
     };
 
+    navigateToBmi = () => {
+      this.props.navigation.navigate('Bmi')
+    };
+
   render() {
     return (
 
@@ -58,7 +62,7 @@ export default class App extends React.Component {
 
 <View style={styles.con1}>
 <View style={styles.top}>
-      <TouchableOpacity onPress = {this.navigateToGym2}
+      <TouchableOpacity onPress = {this.navigateToBmi}
       style={styles.button} >
         
         <Image

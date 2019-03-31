@@ -10,6 +10,7 @@ import Settings from '../screens/Settings';
 import Act1 from '../screens/Act1';
 import Act2 from '../screens/Act2';
 import Act3 from '../screens/Act3';
+import Bmi from '../screens/Bmi';
 
 const AppNavigator = createStackNavigator({
     Welcome:{screen: Welcome},
@@ -17,10 +18,12 @@ const AppNavigator = createStackNavigator({
     Gym: { screen: Gym },
     Gym2: {screen: Gym2},
     Calories: {screen: Calories},
+    Bmi: {screen: Bmi},
     Settings: {screen: Settings},
     Act1: {screen: Act1},
     Act2: {screen: Act2},
     Act3: {screen: Act3},
+    
   });
 
   
