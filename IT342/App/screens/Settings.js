@@ -10,6 +10,7 @@ export default class App extends React.Component {
     height : '',
     weight : '',
     age : '',
+    BMI : ''
   };
   User = (age, weight, height) => {};
     static navigationOptions = {
